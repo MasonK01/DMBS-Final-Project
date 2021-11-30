@@ -1,0 +1,151 @@
+:root {
+  --dark-color: #2d2c2c;
+  --purple-solid: #350a4f;
+  --purple-transparent: rgba(53, 10, 79, 0.7);
+  --purple-transparent-alt: rgba(53, 10, 79, 0.5);
+  --purple-light: #8f50fb;
+  --yellow-solid: #fa9e2c;
+  --gradient-color: linear-gradient(
+    to right,
+    var(--yellow-solid),
+    var(--purple-light)
+  );
+  --gradient-color-alt: linear-gradient(
+    to right,
+    var(--purple-light),
+    var(--yellow-solid)
+  );
+}
+
+.header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--purple-transparent);
+  z-index: 999;
+}
+
+.header.active {
+  background-color: var(--purple-solid);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  max-width: 80%;
+}
+
+.hamburger-menu {
+  font-size: 2.6rem;
+  color: yellow;
+  cursor: pointer;
+  position: relative;
+  z-index: 1500;
+}
+
+.hamburger-menu .fa-times {
+  display: none;
+}
+
+.menu-open .hamburger-menu .fa-times {
+  display: block;
+}
+
+.nav-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--purple-solid);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1400;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.menu-open .nav-list {
+  opacity: 1;
+  transform: scale(1);
+}
+.nav-item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.nav-link {
+  display: block;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1rem;
+}
+.room-titles {
+  font-size: 60px;
+  color: white;
+  margin: 10px;
+}
+
+.room-font {
+  font-size: 33px;
+  font-weight: bold;
+  color: white;
+}
+
+.btn-gradient {
+  background-image: var(--gradient-color);
+}
+
+.btn-gradient:hover {
+  background-image: var(--gradient-color-alt);
+}
+
+.btn {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem 3.5rem;
+  border: none;
+  border-radius: 10rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.menu-words {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+}
+a:link {
+  color: whitesmoke;
+}
+
+/* visited link */
+a:visited {
+  color: whitesmoke;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
